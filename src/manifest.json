@@ -9,8 +9,5 @@
 
   "action":{
     "default_popup":"index.html"
-  },
-  "icons": {
-    "128": "assets/app-icon.png"
   }
 }

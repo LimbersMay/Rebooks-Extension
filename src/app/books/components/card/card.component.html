@@ -1,0 +1,52 @@
+<div class="flex mt-3 hover:shadow-1">
+    <p-image
+      src="https://m.media-amazon.com/images/I/81YkqyaFVEL._AC_UF894,1000_QL80_.jpg"
+      alt="Book cover"
+      width="75%"
+      class="max-w-10rem w-fit"
+    />
+
+    <div class="flex w-full flex-column text-left justify-content-evenly">
+      <span class="text-xl font-bold text-primary">
+        Atomic Habits
+      </span>
+
+      <span
+        class="text-sm font-bold text-gray-500"
+      >
+        James Clear
+      </span>
+
+      <p-progressBar [value]="50">
+        <ng-template pTemplate="content" let-value>
+          <span> {{value}}/100 </span>
+        </ng-template>
+      </p-progressBar>
+
+      <div class="flex gap-2">
+        <button
+          pButton
+          [outlined]="true"
+          pTooltip="Edit this book"
+          severity="primary"
+          size="small"
+          class="justify-content-center flex-grow-1"
+          showDelay="1000"
+        >
+          Edit
+        </button>
+
+        <button
+          pButton
+          [outlined]="true"
+          pTooltip="Delete this book"
+          severity="danger"
+          size="small"
+          class="justify-content-center flex-grow-1"
+          showDelay="1000"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+</div>

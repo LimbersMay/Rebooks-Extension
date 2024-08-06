@@ -1,25 +1,27 @@
 <div class="flex mt-3 hover:shadow-1">
     <p-image
-      src="https://m.media-amazon.com/images/I/81YkqyaFVEL._AC_UF894,1000_QL80_.jpg"
+      [src]="book.imageUrl"
       alt="Book cover"
       width="75%"
       class="max-w-10rem w-fit"
     />
 
-    <div class="flex w-full flex-column text-left justify-content-evenly">
-      <span class="text-xl font-bold text-primary">
-        Atomic Habits
+    <div class="flex w-full flex-column text-left justify-content-between mr-2">
+      <span class="text-xl font-bold text-gray-600">
+        {{book.title}}
       </span>
 
       <span
         class="text-sm font-bold text-gray-500"
       >
-        James Clear
+        {{book.author}}
       </span>
 
-      <p-progressBar [value]="50">
+      <p-progressBar [value]="(book.currentPage / book.totalPages) * 100">
         <ng-template pTemplate="content" let-value>
-          <span> {{value}}/100 </span>
+          <span class="text-sm">
+            {{ book.currentPage }}/{{ book.totalPages }}
+          </span>
         </ng-template>
       </p-progressBar>
 
@@ -32,6 +34,7 @@
           size="small"
           class="justify-content-center flex-grow-1"
           showDelay="1000"
+          [routerLink]="['/books/edit', book.id]"
         >
           Edit
         </button>
@@ -44,6 +47,7 @@
           size="small"
           class="justify-content-center flex-grow-1"
           showDelay="1000"
+          (click)="onDelete()"
         >
           Delete
         </button>

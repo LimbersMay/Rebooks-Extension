@@ -1,0 +1,115 @@
+<p-scrollPanel
+  [style]="{ width: '100%', height: '460px', 'margin-top': '2rem', 'min-height': '200px' }"
+>
+  <ng-template pTemplate="content">
+    <div class="flex flex-column align-items-center gap-3">
+      <img
+        [src]="bookForm.value.imageUrl"
+        alt="Book cover"
+        class="w-10rem shadow-3"
+      />
+
+      <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+
+        <div class="flex flex-column gap-2 text-left">
+          <label
+            for="title"
+            class="text-sm font-bold text-gray-500"
+          >
+            Title
+          </label>
+          <input
+            pInputText
+            id="title"
+            aria-describedby="username-help"
+            variant="outlined"
+            formControlName="title"
+          />
+        </div>
+
+        <div class="flex flex-column gap-2 text-left">
+          <label
+            for="author"
+            class="text-sm font-bold text-gray-500"
+          >
+            Author
+          </label>
+          <input
+            pInputText
+            id="author"
+            aria-describedby="username-help"
+            variant="outlined"
+            formControlName="author"
+          />
+        </div>
+
+        <div class="flex flex-column gap-2 text-left">
+          <label
+            for="total-pages"
+            class="text-sm font-bold text-gray-500"
+          >
+            Total pages
+          </label>
+          <input
+            pInputText
+            id="total-pages"
+            aria-describedby="username-help"
+            variant="outlined"
+            formControlName="totalPages"
+          />
+        </div>
+
+        <div class="flex flex-column gap-2 text-left">
+          <label
+            for="current-page"
+            class="text-sm font-bold text-gray-500"
+          >
+            Current page
+          </label>
+          <input
+            pInputText
+            id="current-page"
+            aria-describedby="username-help"
+            variant="outlined"
+            formControlName="currentPage"
+          />
+        </div>
+
+        <div class="flex flex-column gap-2 text-left">
+          <label
+            for="image-url"
+            class="text-sm font-bold text-gray-500"
+          >
+            Image url
+          </label>
+          <input
+            pInputText
+            id="image-url"
+            aria-describedby="username-help"
+            variant="outlined"
+            formControlName="imageUrl"
+          />
+        </div>
+
+        <div class="flex justify-content-center gap-3 mt-3">
+          <button
+            pButton
+            type="button"
+            (click)="onSubmit()"
+            label="Save"
+            class="w-7rem"
+            severity="primary"
+          ></button>
+          <button
+            pButton
+            type="button"
+            label="Cancel"
+            class="w-7rem"
+            severity="secondary"
+            routerLink="list"
+          ></button>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+</p-scrollPanel>

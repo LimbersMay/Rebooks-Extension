@@ -17,7 +17,6 @@ import {FormsModule} from "@angular/forms";
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
-    ProgressBarModule,
     FormsModule
   ],
   providers: [],

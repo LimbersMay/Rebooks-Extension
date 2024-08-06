@@ -17,6 +17,7 @@ import {InputTextareaModule} from "primeng/inputtextarea";
 import {InputGroupModule} from "primeng/inputgroup";
 import {FileUploadModule} from "primeng/fileupload";
 import {ProgressSpinnerModule} from "primeng/progressspinner";
+import {DropdownModule} from "primeng/dropdown";
 
 @NgModule({
   declarations: [],
@@ -40,7 +41,8 @@ import {ProgressSpinnerModule} from "primeng/progressspinner";
     InputTextareaModule,
     InputGroupModule,
     FileUploadModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    DropdownModule
   ]
 })
 export class PrimeNgModule { }

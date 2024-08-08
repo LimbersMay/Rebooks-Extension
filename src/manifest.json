@@ -1,13 +1,16 @@
 {
-  "manifest_version":3,
-
-  "name":"Counter chrome Extension",
-
-  "description":"Counter app Easy to use",
-
+  "name": "ReBooks - Save & Track your reading progress",
   "version": "1.0.0",
-
+  "description": "Save and track your reading progress with ReBooks",
+  "manifest_version": 3,
+  "permissions": ["storage"],
   "action":{
     "default_popup":"index.html"
+  },
+  "icons": {
+    "16": "assets/favicon-16.png",
+    "32": "assets/favicon-32.png",
+    "48": "assets/favicon-48.png",
+    "128": "assets/favicon-128.png"
   }
 }

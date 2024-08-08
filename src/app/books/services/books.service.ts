@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {Observable, of} from "rxjs";
-import {Book} from "../interfaces/book.interface";
+import { Observable, from } from 'rxjs';
+import { Book } from '../interfaces/book.interface';
+import browser from 'webextension-polyfill';
 
 @Injectable({
   providedIn: 'root'
@@ -10,46 +11,50 @@ export class BooksService {
   constructor() {}
 
   public getBooks(): Observable<Book[]> {
-    const books = JSON.parse(localStorage.getItem('books') || '[]');
-    return of(books);
+    return from(browser.storage.sync.get('books').then(result => JSON.parse(result['books'] || '[]')));
   }
 
   public getBookById(id: string): Observable<Book> {
-    const books = JSON.parse(localStorage.getItem('books') || '[]');
-    return of(books.find((book: Book) => book.id === id));
+    return from(browser.storage.sync.get('books').then(result => {
+      const books = JSON.parse(result['books'] || '[]');
+      return books.find((book: Book) => book.id === id);
+    }));
   }
 
   public updateBook(book: Book): Observable<boolean> {
-    const books = JSON.parse(localStorage.getItem('books') || '[]');
-    const bookIndex = books.findIndex((b: Book) => b.id === book.id);
-    books[bookIndex] = book;
-    localStorage.setItem('books', JSON.stringify(books));
-
-    return of(true);
+    return from(browser.storage.sync.get('books').then(result => {
+      const books = JSON.parse(result['books'] || '[]');
+      const bookIndex = books.findIndex((b: Book) => b.id === book.id);
+      books[bookIndex] = book;
+      return browser.storage.sync.set({ books: JSON.stringify(books) }).then(() => true);
+    }));
   }
 
   public addBook(book: Book): Observable<boolean> {
-    const books = JSON.parse(localStorage.getItem('books') || '[]');
-    book.id = Math.random().toString(36);
-    books.push(book);
-    localStorage.setItem('books', JSON.stringify(books));
-    return of(true);
+    return from(browser.storage.sync.get('books').then(result => {
+      const books = JSON.parse(result['books'] || '[]');
+      book.id = Math.random().toString(36);
+      books.push(book);
+      return browser.storage.sync.set({ books: JSON.stringify(books) }).then(() => true);
+    }));
   }
 
   public deleteBook(id: string): Observable<boolean> {
-    const books = JSON.parse(localStorage.getItem('books') || '[]');
-    const booksWithoutDeleted = books.filter((book: Book) => book.id !== id);
-    localStorage.setItem('books', JSON.stringify(booksWithoutDeleted));
-    return of(true);
+    return from(browser.storage.sync.get('books').then(result => {
+      const books = JSON.parse(result['books'] || '[]');
+      const booksWithoutDeleted = books.filter((book: Book) => book.id !== id);
+      return browser.storage.sync.set({ books: JSON.stringify(booksWithoutDeleted) }).then(() => true);
+    }));
   }
 
   public searchBooks(title: string): Observable<Book[]> {
-    const books = JSON.parse(localStorage.getItem('books') || '[]');
-    return of(books.filter((book: Book) => book.title.toLowerCase().includes(title.toLowerCase())));
+    return from(browser.storage.sync.get('books').then(result => {
+      const books = JSON.parse(result['books'] || '[]');
+      return books.filter((book: Book) => book.title.toLowerCase().includes(title.toLowerCase()));
+    }));
   }
 
   public addBooks(books: Book[]): Observable<boolean> {
-    localStorage.setItem('books', JSON.stringify(books));
-    return of(true);
+    return from(browser.storage.sync.set({ books: JSON.stringify(books) }).then(() => true));
   }
 }

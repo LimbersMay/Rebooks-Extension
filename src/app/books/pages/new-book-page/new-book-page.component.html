@@ -24,7 +24,17 @@
             aria-describedby="username-help"
             variant="outlined"
             formControlName="title"
+            pAutoFocus
+            [autofocus]="autoFocus"
+            (keyup.enter)="onSubmit()"
           />
+
+          <span
+            class="mb-3 font-bold p-error text-sm"
+            *ngIf="isValidField('title')"
+          >
+          Title is required
+        </span>
         </div>
 
         <div class="flex flex-column gap-2 text-left">
@@ -40,7 +50,15 @@
             aria-describedby="username-help"
             variant="outlined"
             formControlName="author"
+            (keyup.enter)="onSubmit()"
           />
+
+          <span
+            class="mb-3 font-bold p-error text-sm"
+            *ngIf="isValidField('author')"
+          >
+          Author is required
+        </span>
         </div>
 
         <div class="flex flex-column gap-2 text-left">
@@ -50,13 +68,22 @@
           >
             Total pages
           </label>
-          <input
-            pInputText
+          <p-inputNumber
             id="total-pages"
-            aria-describedby="username-help"
+            inputId="integeronly"
             variant="outlined"
             formControlName="totalPages"
+            [showButtons]="true"
+            (keyup.enter)="onSubmit()"
           />
+
+          <span
+            class="mb-3 font-bold p-error"
+            *ngIf="isValidField('totalPages')"
+          >
+          {{ getFieldError('totalPages') }}
+        </span>
+
         </div>
 
         <div class="flex flex-column gap-2 text-left">
@@ -66,13 +93,22 @@
           >
             Current page
           </label>
-          <input
-            pInputText
+          <p-inputNumber
             id="current-page"
-            aria-describedby="username-help"
+            inputId="integeronly"
             variant="outlined"
             formControlName="currentPage"
+            [showButtons]="true"
+            (keyup.enter)="onSubmit()"
           />
+
+          <span
+            class="mb-3 font-bold p-error text-sm"
+            *ngIf="isValidField('currentPage')"
+          >
+            The current page must be less or equal than <br> the total pages
+        </span>
+
         </div>
 
         <div class="flex flex-column gap-2 text-left">
@@ -88,6 +124,7 @@
             aria-describedby="username-help"
             variant="outlined"
             formControlName="imageUrl"
+            (keyup.enter)="onSubmit()"
           />
         </div>
 

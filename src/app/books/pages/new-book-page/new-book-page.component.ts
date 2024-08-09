@@ -25,7 +25,7 @@ export class NewBookPageComponent implements OnInit {
         const totalPages = formGroup.get('totalPages') as FormControl;
         const currentPage = formGroup.get('currentPage') as FormControl;
 
-        if (totalPages.value < currentPage.value) {
+        if (currentPage.value > totalPages.value) {
           currentPage.setErrors({invalidPage: true});
           return {invalidPage: true};
         }

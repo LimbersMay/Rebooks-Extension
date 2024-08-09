@@ -38,8 +38,8 @@ export class ExcelService {
           id: row.getCell(1).value as string,
           title: row.getCell(2).value as string,
           author: row.getCell(3).value as string,
-          totalPages: row.getCell(4).value as number,
-          currentPage: row.getCell(5).value as number,
+          totalPages: parseInt(row.getCell(4).value as string, 10),
+          currentPage: parseInt(row.getCell(5).value as string, 10),
           imageUrl: row.getCell(6).value as string,
         };
         books.push(book);

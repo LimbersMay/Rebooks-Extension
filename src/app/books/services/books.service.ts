@@ -34,7 +34,7 @@ export class BooksService {
     return from(browser.storage.sync.get('books').then(result => {
       const books = JSON.parse(result['books'] || '[]');
       book.id = Math.random().toString(36);
-      books.push(book);
+      books.unshift(book);
       return browser.storage.sync.set({ books: JSON.stringify(books) }).then(() => true);
     }));
   }

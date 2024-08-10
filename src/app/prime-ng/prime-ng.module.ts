@@ -20,6 +20,8 @@ import {ProgressSpinnerModule} from "primeng/progressspinner";
 import {DropdownModule} from "primeng/dropdown";
 import {InputNumberModule} from "primeng/inputnumber";
 import {AutoFocusModule} from "primeng/autofocus";
+import {ChipModule} from "primeng/chip";
+import {TagModule} from "primeng/tag";
 
 @NgModule({
   declarations: [],
@@ -46,7 +48,9 @@ import {AutoFocusModule} from "primeng/autofocus";
     ProgressSpinnerModule,
     DropdownModule,
     InputNumberModule,
-    AutoFocusModule
+    AutoFocusModule,
+    ChipModule,
+    TagModule
   ]
 })
 export class PrimeNgModule { }

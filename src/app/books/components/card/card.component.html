@@ -1,55 +1,61 @@
 <div class="flex mt-3 hover:shadow-1">
-    <img
-      [src]="book.imageUrl"
-      alt="Book cover"
-      class="max-w-10rem w-fit pr-3 pl-3"
-    />
+  <img
+    [src]="book.imageUrl"
+    alt="Book cover"
+    class="max-w-10rem w-fit pr-3 pl-3"
+  />
 
-    <div class="flex w-full flex-column text-left justify-content-between mr-2">
+  <div class="flex w-full flex-column text-left justify-content-between mr-2">
       <span class="text-xl font-bold text-gray-600">
-        {{book.title}}
+        {{ book.title }}
       </span>
 
-      <span
-        class="text-sm font-bold text-gray-500"
+    <span
+      class="text-sm font-bold text-gray-500"
+    >
+        {{ book.author }}
+      </span>
+
+    <p-progressBar
+      [value]="(book.currentPage / book.totalPages) * 100 | number:'1.0-0'"
+    >
+    </p-progressBar>
+
+    <p-chip styleClass="pl-0 pr-3">
+    <span class="bg-primary border-circle w-2rem h-2rem flex align-items-center justify-content-center">
+        <i class="pi pi-book text-white"></i>
+    </span>
+      <span class="ml-2 font-medium">
+        {{ book.currentPage }} / {{ book.totalPages }}
+    </span>
+    </p-chip>
+
+    <div class="flex gap-2">
+      <button
+        pButton
+        [outlined]="true"
+        pTooltip="Edit this book"
+        severity="primary"
+        size="small"
+        class="justify-content-center flex-grow-1"
+        showDelay="1000"
+        [routerLink]="['/books/edit', book.id]"
       >
-        {{book.author}}
-      </span>
+        Edit
+      </button>
 
-      <p-progressBar [value]="(book.currentPage / book.totalPages) * 100">
-        <ng-template pTemplate="content" let-value>
-          <span class="text-sm">
-            {{ book.currentPage }}/{{ book.totalPages }}
-          </span>
-        </ng-template>
-      </p-progressBar>
-
-      <div class="flex gap-2">
-        <button
-          pButton
-          [outlined]="true"
-          pTooltip="Edit this book"
-          severity="primary"
-          size="small"
-          class="justify-content-center flex-grow-1"
-          showDelay="1000"
-          [routerLink]="['/books/edit', book.id]"
-        >
-          Edit
-        </button>
-
-        <button
-          pButton
-          [outlined]="true"
-          pTooltip="Delete this book"
-          severity="danger"
-          size="small"
-          class="justify-content-center flex-grow-1"
-          showDelay="1000"
-          (click)="onDelete()"
-        >
-          Delete
-        </button>
-      </div>
+      <button
+        pButton
+        [outlined]="true"
+        pTooltip="Delete this book"
+        severity="danger"
+        size="small"
+        class="justify-content-center flex-grow-1"
+        showDelay="1000"
+        (click)="onDelete()"
+      >
+        Delete
+      </button>
     </div>
+  </div>
 </div>

@@ -1,6 +1,6 @@
 {
   "name": "ReBooks - Save & Track your reading progress",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Save and track your reading progress with ReBooks",
   "manifest_version": 3,
   "permissions": ["storage"],

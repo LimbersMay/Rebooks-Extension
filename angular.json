@@ -71,9 +71,14 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "analyze-bundle": {
+              "sourceMap": true,
+              "outputHashing": "none",
+              "namedChunks": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production",
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",

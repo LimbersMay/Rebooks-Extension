@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Book} from "../../interfaces/book.interface";
 import {BooksService} from "../../services/books.service";
 import {FileUploadEvent} from "primeng/fileupload";
-import {ExcelService} from "../../services/excel-service.service";
+import {ExcelService} from "../../services/excel.service";
 import {delay} from "rxjs";
 
 @Component({
@@ -48,7 +48,7 @@ export class ListPageComponent implements OnInit {
     this.isLoading = true;
 
     const arrayBuffer = await file.arrayBuffer();
-    this.books = await this.excelService.getExcelData(arrayBuffer);
+    this.books = this.excelService.getExcelData(arrayBuffer);
 
     this.booksService.addBooks(this.books)
       .pipe(

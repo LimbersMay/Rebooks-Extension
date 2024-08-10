@@ -96,7 +96,7 @@ export class NewBookPageComponent implements OnInit {
 
     if (this.bookForm.invalid) {
       this.bookForm.markAllAsTouched();
-      return
+      return;
     }
 
     if (this.currentBook.id) {

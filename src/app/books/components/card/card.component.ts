@@ -6,7 +6,7 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'books-book-card',
   templateUrl: './card.component.html',
-  styles: ``
+  styleUrl: './card.component.css'
 })
 export class CardComponent implements OnInit{
   @Input()

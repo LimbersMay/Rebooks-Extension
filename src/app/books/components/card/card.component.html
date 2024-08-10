@@ -5,8 +5,12 @@
     class="max-w-10rem w-fit pr-3 pl-3"
   />
 
-  <div class="flex w-full flex-column text-left justify-content-between mr-2">
-      <span class="text-xl font-bold text-gray-600">
+  <div class="flex w-full flex-column text-left justify-content-between mr-2 gap-2">
+      <span
+        class="text-xl font-bold text-gray-600 title"
+        [pTooltip]="book.title"
+        showDelay="1000"
+      >
         {{ book.title }}
       </span>
 

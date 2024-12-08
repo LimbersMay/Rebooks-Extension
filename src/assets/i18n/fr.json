@@ -1,0 +1,19 @@
+{
+  "bookCardEditBtn": "Éditer",
+  "bookCardDeleteBtn": "Supprimer",
+  "bookTitle": "Titre",
+  "bookAuthor": "Auteur",
+  "bookTotalPages": "Nombre de pages",
+  "bookCurrentPage": "Page actuelle",
+  "bookImageURL": "URL de l'image",
+  "cancelBtn": "Annuler",
+  "saveBtn": "Enregistrer",
+
+  "editBookTooltip": "Éditer ce livre",
+  "deleteBookTooltip": "Supprimer ce livre",
+  "exportBooksTooltip": "Exporter tous les livres",
+  "importBooksTooltip": "Importer des livres",
+  "addBookTooltip": "Ajouter un nouveau livre",
+  "searchBooksTooltip": "Rechercher un livre",
+  "settingsTooltip": "Paramètres"
+}

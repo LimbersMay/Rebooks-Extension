@@ -16,5 +16,16 @@
   "importBooksTooltip": "Import books",
   "addBookTooltip": "Add a new book",
   "searchBooksTooltip": "Search for a book",
-  "settingsTooltip": "Settings"
+  "settingsTooltip": "Settings",
+
+  "bookTitleLabel": "Title",
+  "bookTitleRequired": "Title is required",
+  "bookAuthorLabel": "Author",
+  "bookAuthorRequired": "Author is required",
+  "bookTotalPagesLabel": "Total Pages",
+  "bookTotalPagesRequired": "Total Pages is required",
+  "bookCurrentPageLabel": "Current Page",
+  "bookCurrentPageRequired": "Current Page is required",
+  "bookImageURLLabel": "Image URL",
+  "currentPageHigherThanTotalPages": "Current page cannot be higher than total pages"
 }

@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "Rebooks - Save & Track your reading progress",
+    "description": "Title of the extension"
+  },
+  "extDescription": {
+    "message": "Rebooks save your reading progress even if you turn off your computer and then you can track your reading progress",
+    "description": "Description of the extension"
+  }
+}

@@ -38,27 +38,27 @@
       <button
         pButton
         [outlined]="true"
-        pTooltip="Edit this book"
+        [pTooltip]="'editBookTooltip' | transloco"
         severity="primary"
         size="small"
         class="justify-content-center flex-grow-1"
         showDelay="1000"
         [routerLink]="['/books/edit', book.id]"
       >
-        Edit
+        {{ 'bookCardEditBtn' | transloco }}
       </button>
 
       <button
         pButton
         [outlined]="true"
-        pTooltip="Delete this book"
+        [pTooltip]="'deleteBookTooltip' | transloco"
         severity="danger"
         size="small"
         class="justify-content-center flex-grow-1"
         showDelay="1000"
         (click)="onDelete()"
       >
-        Delete
+        {{ 'bookCardDeleteBtn' | transloco }}
       </button>
     </div>
   </div>

@@ -9,6 +9,8 @@ import {PrimeNgModule} from "../prime-ng/prime-ng.module";
 import { NewBookPageComponent } from './pages/new-book-page/new-book-page.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ConfigPageComponent } from './pages/config-page/config-page.component';
+import {Ripple} from "primeng/ripple";
+import {TranslocoPipe} from "@jsverse/transloco";
 
 @NgModule({
   declarations: [
@@ -18,12 +20,15 @@ import { ConfigPageComponent } from './pages/config-page/config-page.component';
     NewBookPageComponent,
     ConfigPageComponent
   ],
-  imports: [
-    CommonModule,
-    BooksRoutingModule,
-    PrimeNgModule,
-    FormsModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        BooksRoutingModule,
+        PrimeNgModule,
+        FormsModule,
+        ReactiveFormsModule,
+        TranslocoPipe,
+        Ripple,
+        TranslocoPipe
+    ]
 })
 export class BooksModule { }

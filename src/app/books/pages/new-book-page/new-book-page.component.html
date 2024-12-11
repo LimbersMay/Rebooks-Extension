@@ -16,7 +16,7 @@
             for="title"
             class="text-sm font-bold text-gray-500"
           >
-            Title
+            {{ 'bookTitleLabel' | transloco }}
           </label>
           <input
             pInputText
@@ -31,7 +31,7 @@
             class="mb-3 font-bold p-error text-sm"
             *ngIf="isValidField('title')"
           >
-          Title is required
+          {{ 'bookTitleRequired' | transloco }}
         </span>
         </div>
 
@@ -40,7 +40,7 @@
             for="author"
             class="text-sm font-bold text-gray-500"
           >
-            Author
+            {{ 'bookAuthorLabel' | transloco }}
           </label>
           <input
             pInputText
@@ -55,7 +55,7 @@
             class="mb-3 font-bold p-error text-sm"
             *ngIf="isValidField('author')"
           >
-          Author is required
+          {{ 'bookAuthorRequired' | transloco }}
         </span>
         </div>
 
@@ -64,7 +64,7 @@
             for="total-pages"
             class="text-sm font-bold text-gray-500"
           >
-            Total pages
+            {{ 'bookTotalPagesLabel' | transloco }}
           </label>
           <p-inputNumber
             id="total-pages"
@@ -89,7 +89,7 @@
             for="current-page"
             class="text-sm font-bold text-gray-500"
           >
-            Current page
+            {{ 'bookCurrentPageLabel' | transloco }}
           </label>
           <p-inputNumber
             id="current-page"
@@ -101,10 +101,12 @@
           />
 
           <span
-            class="mb-3 font-bold p-error text-sm"
+            class="mb-3 font-bold p-error text-sm flex flex-wrap"
             *ngIf="isValidField('currentPage')"
           >
-            The current page must be less or equal than <br> the total pages
+            {{ 'currentPageHigherThanTotalPages' | transloco | slice:0:46 }}
+            <br>
+            {{ 'currentPageHigherThanTotalPages' | transloco | slice:46 }}
         </span>
 
         </div>
@@ -114,7 +116,7 @@
             for="image-url"
             class="text-sm font-bold text-gray-500"
           >
-            Image url
+            {{ 'bookImageUrlLabel' | transloco }}
           </label>
           <input
             pInputText
@@ -131,16 +133,16 @@
             pButton
             type="button"
             (click)="onSubmit()"
-            label="Save"
-            class="w-7rem"
+            [style]="{ 'min-width': '7rem' }"
+            [label]="'saveBtn' | transloco"
             severity="primary"
           ></button>
           <button
             pButton
             type="button"
-            label="Cancel"
-            class="w-7rem"
+            [label]="'cancelBtn' | transloco"
             severity="secondary"
+            [style]="{ 'min-width': '7rem' }"
             routerLink="list"
           ></button>
         </div>

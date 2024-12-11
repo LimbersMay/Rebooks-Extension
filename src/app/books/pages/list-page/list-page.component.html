@@ -12,7 +12,10 @@
   </p-scrollPanel>
 
   <div class="flex justify-content-evenly gap-2 mt-auto p-2" *ngIf="!isSearching">
-    <p-button icon="pi pi-upload" [rounded]="true" [outlined]="true" pTooltip="Export your data"
+    <p-button icon="pi pi-upload"
+              [rounded]="true"
+              [outlined]="true"
+              [pTooltip]="'exportBooksTooltip' | transloco"
               tooltipPosition="bottom" showDelay="500"
               (onClick)="exportToExcel()"
     />
@@ -25,16 +28,21 @@
       maxFileSize="1000000"
       styleClass="p-button-rounded p-button-outlined"
       (onUpload)="uploadFile($event)"
-      pTooltip="Import your data"
+      [pTooltip]="'importBooksTooltip' | transloco"
       tooltipPosition="bottom"
       showDelay="500"
       [auto]="true"
     />
-    <p-button icon="pi pi-plus" [rounded]="true" pTooltip="Add a new book" tooltipPosition="bottom" showDelay="500"
+    <p-button icon="pi pi-plus" [rounded]="true" [pTooltip]="'addBookTooltip' | transloco"
+              tooltipPosition="bottom" showDelay="500"
               routerLink="/books/new-book"/>
-    <p-button icon="pi pi-search" [rounded]="true" [outlined]="true" pTooltip="Search for a book" tooltipPosition="bottom"
+    <p-button icon="pi pi-search" [rounded]="true" [outlined]="true"
+              [pTooltip]="'searchBooksTooltip' | transloco"
+              tooltipPosition="bottom"
               showDelay="500" (onClick)="toggleSearch()"/>
-    <p-button icon="pi pi-cog" [rounded]="true" [outlined]="true" pTooltip="Settings" tooltipPosition="bottom"
+    <p-button icon="pi pi-cog" [rounded]="true" [outlined]="true"
+              [pTooltip]="'settingsTooltip' | transloco"
+              tooltipPosition="bottom"
               showDelay="500" routerLink="/books/config"/>
   </div>
 

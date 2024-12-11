@@ -1,0 +1,30 @@
+{
+  "bookCardEditBtn": "Éditer",
+  "bookCardDeleteBtn": "Supprimer",
+  "bookTitle": "Titre",
+  "bookAuthor": "Auteur",
+  "bookTotalPages": "Nombre de pages",
+  "bookCurrentPage": "Page actuelle",
+  "bookImageURL": "URL de l'image",
+  "cancelBtn": "Annuler",
+  "saveBtn": "Enregistrer",
+
+  "editBookTooltip": "Éditer ce livre",
+  "deleteBookTooltip": "Supprimer ce livre",
+  "exportBooksTooltip": "Exporter tous les livres",
+  "importBooksTooltip": "Importer des livres",
+  "addBookTooltip": "Ajouter un nouveau livre",
+  "searchBooksTooltip": "Rechercher un livre",
+  "settingsTooltip": "Paramètres",
+
+  "bookTitleLabel": "Titre",
+  "bookTitleRequired": "Le titre est requis",
+  "bookAuthorLabel": "Auteur",
+  "bookAuthorRequired": "L'auteur est requis",
+  "bookTotalPagesLabel": "Nombre de pages",
+  "bookTotalPagesRequired": "Le nombre de pages est requis",
+  "bookCurrentPageLabel": "Page actuelle",
+  "bookCurrentPageRequired": "La page actuelle est requise",
+  "bookImageURLLabel": "URL de l'image",
+  "currentPageHigherThanTotalPages": "La page actuelle ne peut pas être supérieure au nombre total de pages"
+}

@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "Rebooks - Enregistrez et suivez vos progrès de lecture",
+    "description": "Titre de l'extension"
+  },
+  "extDescription": {
+    "message": "ReBooks enregistre vos progrès de lecture même si vous éteignez votre ordinateur, et vous pouvez ensuite suivre vos progrès de lecture.",
+    "description": "Description de l'extension"
+  }
+}

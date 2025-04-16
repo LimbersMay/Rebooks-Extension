@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as XLSX from 'xlsx';
 import { Book } from '../interfaces/book.interface';
-import { saveAs } from 'file-saver';
+import { saveAs } from 'file-saver-es';
 
 @Injectable({
   providedIn: 'root',
